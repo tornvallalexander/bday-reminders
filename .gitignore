@@ -1,7 +1,23 @@
-node_modules
+.vscode/
+.DS_Store
+node_modules/
+.idea
 
 /.cache
 /build
+/server-build
 /public/build
-.idea
-.env
+/coverage
+tsconfig.tsbuildinfo
+
+/app/styles/**/*.css
+styles/**/*.css
+other/postcss.ignored
+
+/cypress/videos
+/cypress/screenshots
+*.local.*
+
+.env*
+.env.production
+.envrc
