@@ -69,13 +69,13 @@ export default function App() {
       <body>
         <Outlet />
         <ScrollRestoration />
-        <Scripts />
         <script
           dangerouslySetInnerHTML={{
             __html: `window.ENV = ${JSON.stringify(data.ENV)};`,
           }}
         />
-        {ENV.NODE_ENV === 'development' ? <LiveReload /> : null}
+        {data.ENV.NODE_ENV === 'development' ? <LiveReload /> : null}
+        <Scripts />
       </body>
     </html>
   );

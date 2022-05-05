@@ -18,6 +18,6 @@ other/postcss.ignored
 /cypress/screenshots
 *.local.*
 
-.env*
+.env
 .env.production
 .envrc
