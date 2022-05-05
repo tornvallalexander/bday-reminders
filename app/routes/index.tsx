@@ -1,22 +1,22 @@
-import type {UserResponse} from "~/types";
+import type {ReminderResponse} from "~/types";
 import type {LoaderFunction} from "@remix-run/node";
-import {getUser} from "~/utils/session.server";
+import {getReminder} from "~/utils/session.server";
 import {useLoaderData} from "@remix-run/react";
 import {json} from "@remix-run/node";
 
 
 type LoaderData = {
-  user: UserResponse | undefined;
+  reminder: ReminderResponse | undefined;
 }
 
 export const loader: LoaderFunction = async ({request}) => {
-  const user = await getUser({ id: 1 })
+  const reminder = await getReminder({ id: 2 })
 
   const data: LoaderData = {
-    user: user
+    reminder: reminder
   }
 
-  return json(data)
+  return json<LoaderData>(data)
 }
 
 export default function Index() {
@@ -24,7 +24,7 @@ export default function Index() {
   console.log(data)
   return (
     <div>
-      <h1>Welcome to Remix</h1>
+      <h1 className="text-2xl">Welcome to Remix</h1>
       <ul>
         <li>
           <a
