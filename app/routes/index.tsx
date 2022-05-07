@@ -1,11 +1,15 @@
+import {Button} from "~/components/Button";
 
 export default function Index() {
   return (
     <div>
       <h1 className="text-2xl text-blue-600">Welcome to Remix</h1>
-      <button className="btn btn-primary">
+      <button className="btn btn-primary btn-md">
         Hello from Daisy UI
       </button>
+      <Button loading>
+        Hello there
+      </Button>
       <ul>
         <li>
           <a
