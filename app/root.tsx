@@ -7,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration, useLoaderData,
 } from "@remix-run/react";
-import appStyles from "../styles/app.css"
+import appStyles from "~/styles/app.css"
 import {getEnv} from "~/utils/env.server";
 import {getDomainUrl} from "~/utils/misc";
 import {json} from "@remix-run/node";

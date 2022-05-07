@@ -1,30 +1,8 @@
-import type {ReminderResponse} from "~/types";
-import type {LoaderFunction} from "@remix-run/node";
-import {getReminder} from "~/utils/session.server";
-import {useLoaderData} from "@remix-run/react";
-import {json} from "@remix-run/node";
-
-
-type LoaderData = {
-  reminder: ReminderResponse | undefined;
-}
-
-export const loader: LoaderFunction = async ({request}) => {
-  const reminder = await getReminder({ id: 2 })
-
-  const data: LoaderData = {
-    reminder: reminder
-  }
-
-  return json<LoaderData>(data)
-}
 
 export default function Index() {
-  const data = useLoaderData<LoaderData>()
-  console.log(data)
   return (
     <div>
-      <h1 className="text-2xl">Welcome to Remix</h1>
+      <h1 className="text-2xl text-blue-600">Welcome to Remix</h1>
       <ul>
         <li>
           <a
