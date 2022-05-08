@@ -74,7 +74,7 @@ export default function App() {
             __html: `window.ENV = ${JSON.stringify(data.ENV)};`,
           }}
         />
-        {data.ENV.NODE_ENV === 'development' ? <LiveReload /> : null}
+        {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
         <Scripts />
       </body>
     </html>

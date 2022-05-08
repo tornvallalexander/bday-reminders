@@ -8,16 +8,24 @@ interface Props {
   children: React.ReactNode | React.ReactNode[];
 }
 
-const Button = ({
-  children,
-  variant = "primary",
-  size = "md",
-  loading = false,
-  className,
-  ...buttonProps
-}: Props & JSX.IntrinsicElements["button"]) => {
+// eslint-disable-next-line react/display-name
+const Button = React.forwardRef<
+  HTMLButtonElement,
+  React.PropsWithChildren<
+    Props & JSX.IntrinsicElements["button"]
+    >
+  >((props, ref) => {
+  const {
+    variant,
+    size,
+    loading,
+    className,
+    children,
+    ...buttonProps
+  } = props
+
   return (
-    <button {...buttonProps} className={clsx(
+    <button ref={ref} {...buttonProps} className={clsx(
       "btn",
       {
         "": variant === "default",
@@ -34,7 +42,7 @@ const Button = ({
       {children}
     </button>
   )
-}
+})
 
 export {
   Button,
